@@ -10,7 +10,10 @@
 
 ## Create subscriptions
 
-Takes the subscription rules, the name for subscription and the user name of the person registering this subscription and saves the subscription in subscription database. The subscription name needs to be unique. Multiple subscriptions may be sent through a json array.
+Takes the subscription rules, the name for subscription and the user name of 
+the person registering this subscription and saves the subscription in 
+subscription database. The subscription name needs to be unique. Multiple 
+subscriptions may be sent through a json array.
 
     POST /subscriptions
 
@@ -64,7 +67,7 @@ Example subscriptions
     ]
   }
 ]
-````
+```
 
 ```javascript
 // this subscription will trigger a REST POST CALL
@@ -98,7 +101,7 @@ Example subscriptions
     ],
     "subscriptionName": "artifactRequirementSubscription",
     "ldapUserName": "ABC"
-  }
+}
 
 ```
 

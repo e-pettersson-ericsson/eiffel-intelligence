@@ -1,0 +1,75 @@
+<project name="Eiffel Intelligence">
+    <custom>
+        <fluidoSkin>
+            <topBarEnabled>true</topBarEnabled>
+            <topBarIcon>
+                <name>Eiffel Intelligence</name>
+                <href>/</href>
+            </topBarIcon>
+            <navBarStyle>navbar-inverse</navBarStyle> <!-- black design on top navbar-->
+            <sideBarEnabled>true</sideBarEnabled>
+            <breadcrumbDivider>-</breadcrumbDivider>
+        </fluidoSkin>
+    </custom>
+
+    <bannerLeft>
+        <name>Eiffel Intelligence</name>
+    </bannerLeft>
+
+    <!-- skin config here -->
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.5</version>
+    </skin>
+
+    <publishDate position="right" />
+    <version position="right" />
+    <poweredBy/>
+
+    <body>
+        <head/>
+        <breadcrumbs>
+            <item name="Index" href="index.html" />
+        </breadcrumbs>
+
+        <menu name="Overview">
+            <item name="Index" href="index.html" />
+            <item name="Configuration" href="./wiki/Configuration.html" />
+            <item name="Running Eiffel Intelligence" href="./wiki/Running-Eiffel-Intelligence.html" />
+            <item collapse="true" name="REST API" href="./wiki/REST-API.html">
+                <item name="Query" href="./wiki/Query.html" />
+                <item name="Running rules on objects" href="./wiki/Running-rules-on-objects.html" />
+                <item name="Authentication" href="./wiki/Authentication.html" />
+                <item name="Subscriptions" href="./wiki/Subscription-API.html" />
+                <item name="Download files" href="./wiki/Download-Files.html" />
+            </item>
+            <item collapse="true" name ="Rules" href="./wiki/Rules.html">
+                <item name="Merge Resolver Rules" href="./wiki/MergeResolverRules.html" />
+                <item name="History Rules" href="./wiki/History-rules.html" />
+            </item>
+            <item name="TestRules User Guide" href="./wiki/TestRulesUserGuide.html" />
+            <item collapse="true" name="Subscriptions" href="./wiki/Subscriptions.html">
+                <item name="REST POST notification" href="./wiki/REST-POST-notification.html" />
+                <item name="Email notification" href="./wiki/Email-notification.html" />
+            </item>
+            <item collapse="true" name="Step-by-step aggregation" href="./wiki/Step-by-Step-Aggregation.html">
+                <item name="EiffelArtifactCreatedEvent aggregation" href="./wiki/ArtifactCreatedEvent-aggregation.html" />
+                <item name="EiffelTestCaseTriggeredEvent aggregation" href="./wiki/EiffelTestCaseTriggeredEvent-Aggregation.html" />
+                <item name="EiffelTestCaseStartedEvent aggregation" href="./wiki/EiffelTestCaseStartedEvent-aggregation.html" />
+                <item name="EiffelTestCaseFinishedEvent aggregation" href="./wiki/EiffelTestCaseFinishedEvent-aggregation.html" />
+                <item name="EiffelArtifactPublishedEvent aggregation" href="./wiki/EiffelArtifactPublishedEvent-Aggregation.html" />
+                <item name="EiffelConfidenceLevelModifiedEvent" href="./wiki/EiffelConfidenceLevelModifiedEvent-Aggregation.html" />
+                <item name="Step-by-step subscription notification" href="wiki/Step-by-Step-Subscription-Notification.html" />
+            </item>
+            <item name="Known limitations" href="./wiki/Known-limitations.html" />
+        </menu>
+
+        <!-- Auto generated reports from maven site plugin-->
+        <menu ref="reports" />
+
+        <footer/>
+
+    </body>
+
+</project>
