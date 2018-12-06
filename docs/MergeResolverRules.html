@@ -46,7 +46,7 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
         <ul class="dropdown-menu">
         
-                      <li>      <a href="index.html"  title="Index">Index</a>
+                      <li>      <a href="index.html"  title="Home">Home</a>
 </li>
                   
                       <li>      <a href="Configuration.html"  title="Configuration">Configuration</a>
@@ -109,7 +109,7 @@
 </li>
                                   <li>      <a href="EiffelConfidenceLevelModifiedEvent-Aggregation.html"  title="EiffelConfidenceLevelModifiedEvent">EiffelConfidenceLevelModifiedEvent</a>
 </li>
-                                  <li>      <a href="wiki/Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
+                                  <li>      <a href="Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
 </li>
                               </ul>
             </li>
@@ -144,8 +144,8 @@
         <ul class="breadcrumb">
               
                               <li class="">
-                    <a href="index.html" title="Index">
-        Index</a>
+                    <a href="index.html" title="Home">
+        Home</a>
                     <span class="divider">-</span>
       </li>
         <li class="active ">Merge Resolver Rules</li>
@@ -169,9 +169,9 @@
                               
       <li>
   
-                          <a href="index.html" title="Index">
+                          <a href="index.html" title="Home">
           <span class="none"></span>
-        Index</a>
+        Home</a>
             </li>
                 
       <li>
@@ -266,8 +266,10 @@
             <h1>Merge Resolver Rules</h1>
 <p>JMESPath identifier of the place where to insert the JSON object from <i>&#x201c;ExtractionRules&#x201d;</i>. If MergeResolverRules is null <i>&#x201c;ExtractionRules&#x201d;</i> object will be inserted to the root of aggregated object. </p>
 <p>The location in the aggregated object where the extracted content will be merge can be specified with path elements and a value to exist at that, but not all elements of a path are needed. The aggregated object will be flattened and all paths that contains the path elements in the given order will be collected. Then we check the value and the path with the value is the winning path. If no value from the paths match the given value then we take the longest path that contains the given path elements.</p>
-<p>Example object: <tt>javaScript
-{
+<p>Example object:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">{
    &quot;id&quot;:&quot;eventId&quot;,
    &quot;fakeArray&quot;:[
       {
@@ -311,7 +313,7 @@
       }
    ]
 }
-</tt></p>
+</pre></div></div>
 <div class="section">
 <h2><a name="Example_1:"></a>Example 1:</h2>
 

@@ -46,7 +46,7 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
         <ul class="dropdown-menu">
         
-                      <li>      <a href="index.html"  title="Index">Index</a>
+                      <li>      <a href="index.html"  title="Home">Home</a>
 </li>
                   
                       <li>      <a href="Configuration.html"  title="Configuration">Configuration</a>
@@ -109,7 +109,7 @@
 </li>
                                   <li>      <a href="EiffelConfidenceLevelModifiedEvent-Aggregation.html"  title="EiffelConfidenceLevelModifiedEvent">EiffelConfidenceLevelModifiedEvent</a>
 </li>
-                                  <li>      <a href="wiki/Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
+                                  <li>      <a href="Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
 </li>
                               </ul>
             </li>
@@ -144,8 +144,8 @@
         <ul class="breadcrumb">
               
                               <li class="">
-                    <a href="index.html" title="Index">
-        Index</a>
+                    <a href="index.html" title="Home">
+        Home</a>
                     <span class="divider">-</span>
       </li>
         <li class="active ">History Rules</li>
@@ -169,9 +169,9 @@
                               
       <li>
   
-                          <a href="index.html" title="Index">
+                          <a href="index.html" title="Home">
           <span class="none"></span>
-        Index</a>
+        Home</a>
             </li>
                 
       <li>
@@ -310,44 +310,46 @@
 <div class="source"><pre class="prettyprint">internalComposition.compositions.0
 </pre></div></div>
 <p>This location is at the root object since this event is under the start EiffelArtifactCreatedEvent.</p>
-<p>The new aggregated object is now: <tt>javascript
-    {
-       &quot;fileInformation&quot;:[
-          {
-             &quot;extension&quot;:&quot;jar&quot;,
-             &quot;classifier&quot;:&quot;debug&quot;
-          },
-          {
-             &quot;extension&quot;:&quot;txt&quot;,
-             &quot;classifier&quot;:&quot;test&quot;
-          },
-          {
-             &quot;extension&quot;:&quot;exe&quot;,
-             &quot;classifier&quot;:&quot;application&quot;
-          }
-       ],
-       &quot;buildCommand&quot;:null,
-       // internalComposition is the new addition
-       &quot;internalComposition&quot;:{
-          &quot;compositions&quot;:[
-             {
-                &quot;eventId&quot;:&quot;fb6ef12d-25fb-4d77-b9fd-87688e66de47&quot;,
-                &quot;name&quot;:&quot;My composition&quot;,
-                &quot;time&quot;:2000
-             }
-          ]
-       },
-       &quot;TemplateName&quot;:&quot;ARTIFACT_1&quot;,
-       &quot;id&quot;:&quot;6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43&quot;,
-       &quot;time&quot;:1481875891763,
-       &quot;type&quot;:&quot;EiffelArtifactCreatedEvent&quot;,
-       &quot;gav&quot;:{
-          &quot;groupId&quot;:&quot;com.mycompany.myproduct&quot;,
-          &quot;artifactId&quot;:&quot;sub-system&quot;,
-          &quot;version&quot;:&quot;1.1.0&quot;
-       }
-    }
-</tt></p>
+<p>The new aggregated object is now:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">{
+   &quot;fileInformation&quot;:[
+      {
+         &quot;extension&quot;:&quot;jar&quot;,
+         &quot;classifier&quot;:&quot;debug&quot;
+      },
+      {
+         &quot;extension&quot;:&quot;txt&quot;,
+         &quot;classifier&quot;:&quot;test&quot;
+      },
+      {
+         &quot;extension&quot;:&quot;exe&quot;,
+         &quot;classifier&quot;:&quot;application&quot;
+      }
+   ],
+   &quot;buildCommand&quot;:null,
+   // internalComposition is the new addition
+   &quot;internalComposition&quot;:{
+      &quot;compositions&quot;:[
+         {
+            &quot;eventId&quot;:&quot;fb6ef12d-25fb-4d77-b9fd-87688e66de47&quot;,
+            &quot;name&quot;:&quot;My composition&quot;,
+            &quot;time&quot;:2000
+         }
+      ]
+   },
+   &quot;TemplateName&quot;:&quot;ARTIFACT_1&quot;,
+   &quot;id&quot;:&quot;6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43&quot;,
+   &quot;time&quot;:1481875891763,
+   &quot;type&quot;:&quot;EiffelArtifactCreatedEvent&quot;,
+   &quot;gav&quot;:{
+      &quot;groupId&quot;:&quot;com.mycompany.myproduct&quot;,
+      &quot;artifactId&quot;:&quot;sub-system&quot;,
+      &quot;version&quot;:&quot;1.1.0&quot;
+   }
+}
+</pre></div></div>
 <p>The next event to be traversed is an EiffelArtifactCreatedEvent that previous EiffelCompositionDefinedEvent links to and the JSON object extracted from it with <b>HistoryExtractionRules</b> is </p>
 
 <div class="source">
@@ -365,13 +367,14 @@
       }
    ]
 }
-
 </pre></div></div>
 <p>and it will be appended at following location in aggregated object</p>
 <p>internalComposition.compositions.0.artifacts.0</p>
 <p><i><b>artifacts.0</b></i> is given by <b>HistoryPathRules</b> for EiffelArtifactCreatedEvent and has been appended to previous path.</p>
-<p>The resulting aggregated object is now: <tt>javascript
-{
+<p>The resulting aggregated object is now:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">{
    &quot;fileInformation&quot;:[
       {
          &quot;extension&quot;:&quot;jar&quot;,
@@ -423,7 +426,7 @@
       &quot;version&quot;:&quot;1.1.0&quot;
    }
 }
-</tt></p>
+</pre></div></div>
 <p>We continue with aggregating the <b>EiffelCompositionDefinedEvent</b> linked by latest EiffelArtifactCreatedEvent we aggregated. Its <b>HistoryExtractionRule</b> results in:</p>
 
 <div class="source">
@@ -595,8 +598,22 @@
    }
 }
 </pre></div></div>
-<p>Now it is time to aggregate the <b>EiffelSourceChangeCreatedEvent</b> and its <b>HistoryExtractionRule</b> gives us following object to merge: ``` {  &#x201c;SCCEventId&#x201d;:&#x201c;ac085e24-ac4c-41be-912d-08c7afd32285&#x201d;,  &#x201c;author&#x201d;:{  &#x201c;name&#x201d;:&#x201c;John Doe&#x201d;,  &#x201c;email&#x201d;:&#x201c;<a class="externalLink" href="mailto:john.doe@company.com&quot;">john.doe@company.com&quot;</a>,  &#x201d;id&#x201c;:&#x201d;johndoe&#x201c;,  &#x201d;group&#x201c;:&#x201d;Team Gophers&#x201c;  },  &#x201d;issues&quot;:[</p>
-<p>] } ```</p>
+<p>Now it is time to aggregate the <b>EiffelSourceChangeCreatedEvent</b> and its <b>HistoryExtractionRule</b> gives us following object to merge:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">{
+   &quot;SCCEventId&quot;:&quot;ac085e24-ac4c-41be-912d-08c7afd32285&quot;,
+   &quot;author&quot;:{
+      &quot;name&quot;:&quot;John Doe&quot;,
+      &quot;email&quot;:&quot;john.doe@company.com&quot;,
+      &quot;id&quot;:&quot;johndoe&quot;,
+      &quot;group&quot;:&quot;Team Gophers&quot;
+   },
+   &quot;issues&quot;:[
+
+   ]
+}
+</pre></div></div>
 <p>with relative path </p>
 
 <div class="source">
@@ -607,33 +624,99 @@
 <div class="source">
 <div class="source"><pre class="prettyprint">internalComposition.compositions.0.artifacts.0.internalComposition.compositions.0.sourceChanges.0.sourceCreations.0
 </pre></div></div>
-<p>and the aggregated object will now look like: ```javascript {  &#x201c;fileInformation&#x201d;:[  {  &#x201c;extension&#x201d;:&#x201c;jar&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;debug&#x201d;  },  {  &#x201c;extension&#x201d;:&#x201c;txt&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;test&#x201d;  },  {  &#x201c;extension&#x201d;:&#x201c;exe&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;application&#x201d;  }  ],  &#x201c;buildCommand&#x201d;:null,  &#x201c;internalComposition&#x201d;:{  &#x201c;compositions&#x201d;:[  {  &#x201c;eventId&#x201d;:&#x201c;fb6ef12d-25fb-4d77-b9fd-87688e66de47&#x201d;,  &#x201c;name&#x201d;:&#x201c;My composition&#x201d;,  &#x201c;time&#x201d;:2000,  &#x201c;artifacts&#x201d;:[  {  &#x201c;fileInformation&#x201d;:[  {  &#x201c;extension&#x201d;:&#x201c;jar&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;debug&#x201d;  }  ],  &#x201c;internalComposition&#x201d;:{  &#x201c;compositions&#x201d;:[  {  &#x201c;eventId&#x201d;:&#x201c;fb6ef12d-25fb-4d77-b9fd-87688e66da4j&#x201d;,  &#x201c;sourceChanges&#x201d;:[  {  &#x201c;submitter&#x201d;:{  &#x201c;name&#x201d;:&#x201c;Jane Doe&#x201d;,  &#x201c;email&#x201d;:&#x201c;<a class="externalLink" href="mailto:jane.doe@company.com">jane.doe@company.com</a>&#x201d;  },  &#x201c;SCSEventId&#x201d;:&#x201c;3ce9df6e-cd45-4320-ae66-945f038caa1b&#x201d;,  &#x201c;gitIdentifier&#x201d;:null,  // sourceCreations is the new addition  &#x201c;sourceCreations&#x201d;:[  {  &#x201c;SCCEventId&#x201d;:&#x201c;ac085e24-ac4c-41be-912d-08c7afd32285&#x201d;,  &#x201c;author&#x201d;:{  &#x201c;name&#x201d;:&#x201c;John Doe&#x201d;,  &#x201c;id&#x201d;:&#x201c;johndoe&#x201d;,  &#x201c;email&#x201d;:&#x201c;<a class="externalLink" href="mailto:john.doe@company.com&quot;">john.doe@company.com&quot;</a>,  &#x201d;group&#x201c;:&#x201d;Team Gophers&#x201c;  },  &#x201d;issues&quot;:[</p>
+<p>and the aggregated object will now look like:</p>
 
 <div class="source">
-<div class="source"><pre class="prettyprint">                                   ]
-                                }
-                             ]
-                          }
-                       ],
-                       &quot;name&quot;:&quot;Other composition&quot;,
-                       &quot;time&quot;:5005
-                    }
-                 ]
-              },
-              &quot;id&quot;:&quot;1100572b-c3j4-441e-abc9-b62f48080011&quot;,
-              &quot;gav&quot;:{
-                 &quot;groupId&quot;:&quot;com.othercompany.otherproduct&quot;,
-                 &quot;artifactId&quot;:&quot;other-system&quot;,
-                 &quot;version&quot;:&quot;1.33.0&quot;
-              }
-           }
-        ]
-     }
-  ]
+<div class="source"><pre class="prettyprint">{
+   &quot;fileInformation&quot;:[
+      {
+         &quot;extension&quot;:&quot;jar&quot;,
+         &quot;classifier&quot;:&quot;debug&quot;
+      },
+      {
+         &quot;extension&quot;:&quot;txt&quot;,
+         &quot;classifier&quot;:&quot;test&quot;
+      },
+      {
+         &quot;extension&quot;:&quot;exe&quot;,
+         &quot;classifier&quot;:&quot;application&quot;
+      }
+   ],
+   &quot;buildCommand&quot;:null,
+   &quot;internalComposition&quot;:{
+      &quot;compositions&quot;:[
+         {
+            &quot;eventId&quot;:&quot;fb6ef12d-25fb-4d77-b9fd-87688e66de47&quot;,
+            &quot;name&quot;:&quot;My composition&quot;,
+            &quot;time&quot;:2000,
+            &quot;artifacts&quot;:[
+               {
+                  &quot;fileInformation&quot;:[
+                     {
+                        &quot;extension&quot;:&quot;jar&quot;,
+                        &quot;classifier&quot;:&quot;debug&quot;
+                     }
+                  ],
+                  &quot;internalComposition&quot;:{
+                     &quot;compositions&quot;:[
+                        {
+                           &quot;eventId&quot;:&quot;fb6ef12d-25fb-4d77-b9fd-87688e66da4j&quot;,
+                           &quot;sourceChanges&quot;:[
+                              {
+                                 &quot;submitter&quot;:{
+                                    &quot;name&quot;:&quot;Jane Doe&quot;,
+                                    &quot;email&quot;:&quot;jane.doe@company.com&quot;
+                                 },
+                                 &quot;SCSEventId&quot;:&quot;3ce9df6e-cd45-4320-ae66-945f038caa1b&quot;,
+                                 &quot;gitIdentifier&quot;:null,
+                                 // sourceCreations is the new addition
+                                 &quot;sourceCreations&quot;:[
+                                    {
+                                       &quot;SCCEventId&quot;:&quot;ac085e24-ac4c-41be-912d-08c7afd32285&quot;,
+                                       &quot;author&quot;:{
+                                          &quot;name&quot;:&quot;John Doe&quot;,
+                                          &quot;id&quot;:&quot;johndoe&quot;,
+                                          &quot;email&quot;:&quot;john.doe@company.com&quot;,
+                                          &quot;group&quot;:&quot;Team Gophers&quot;
+                                       },
+                                       &quot;issues&quot;:[
+
+                                       ]
+                                    }
+                                 ]
+                              }
+                           ],
+                           &quot;name&quot;:&quot;Other composition&quot;,
+                           &quot;time&quot;:5005
+                        }
+                     ]
+                  },
+                  &quot;id&quot;:&quot;1100572b-c3j4-441e-abc9-b62f48080011&quot;,
+                  &quot;gav&quot;:{
+                     &quot;groupId&quot;:&quot;com.othercompany.otherproduct&quot;,
+                     &quot;artifactId&quot;:&quot;other-system&quot;,
+                     &quot;version&quot;:&quot;1.33.0&quot;
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   &quot;TemplateName&quot;:&quot;ARTIFACT_1&quot;,
+   &quot;id&quot;:&quot;6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43&quot;,
+   &quot;time&quot;:1481875891763,
+   &quot;type&quot;:&quot;EiffelArtifactCreatedEvent&quot;,
+   &quot;gav&quot;:{
+      &quot;groupId&quot;:&quot;com.mycompany.myproduct&quot;,
+      &quot;artifactId&quot;:&quot;sub-system&quot;,
+      &quot;version&quot;:&quot;1.1.0&quot;
+   }
+}
 </pre></div></div>
-<p>},  &#x201c;TemplateName&#x201d;:&#x201c;ARTIFACT_1&#x201d;,  &#x201c;id&#x201d;:&#x201c;6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43&#x201d;,  &#x201c;time&#x201d;:1481875891763,  &#x201c;type&#x201d;:&#x201c;EiffelArtifactCreatedEvent&#x201d;,  &#x201c;gav&#x201d;:{  &#x201c;groupId&#x201d;:&#x201c;com.mycompany.myproduct&#x201d;,  &#x201c;artifactId&#x201d;:&#x201c;sub-system&#x201d;,  &#x201c;version&#x201d;:&#x201c;1.1.0&#x201d;  } } ```</p>
-<p>Since the tree returns the first <b>EiffelSourceChangeCreatedEvent</b> we aggregate following information from it too. <tt>
-{
+<p>Since the tree returns the first <b>EiffelSourceChangeCreatedEvent</b> we aggregate following information from it too.</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">{
    &quot;SCCEventId&quot;:&quot;552ad6a4-c522-47e2-9195-0481930979e4&quot;,
    &quot;author&quot;:null,
    &quot;issues&quot;:[
@@ -646,7 +729,8 @@
       }
    ]
 }
-</tt> with relative path:</p>
+</pre></div></div>
+<p>with relative path:</p>
 
 <div class="source">
 <div class="source"><pre class="prettyprint">sourceCreations.1
@@ -656,47 +740,112 @@
 <div class="source">
 <div class="source"><pre class="prettyprint">internalComposition.compositions.0.artifacts.0.internalComposition.compositions.0.sourceChanges.0.sourceCreations.1.SCCEventId
 </pre></div></div>
-<p>which gives us the following aggregated object: ```javascript {  &#x201c;fileInformation&#x201d;:[  {  &#x201c;extension&#x201d;:&#x201c;jar&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;debug&#x201d;  },  {  &#x201c;extension&#x201d;:&#x201c;txt&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;test&#x201d;  },  {  &#x201c;extension&#x201d;:&#x201c;exe&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;application&#x201d;  }  ],  &#x201c;buildCommand&#x201d;:null,  &#x201c;internalComposition&#x201d;:{  &#x201c;compositions&#x201d;:[  {  &#x201c;eventId&#x201d;:&#x201c;fb6ef12d-25fb-4d77-b9fd-87688e66de47&#x201d;,  &#x201c;name&#x201d;:&#x201c;My composition&#x201d;,  &#x201c;time&#x201d;:2000,  &#x201c;artifacts&#x201d;:[  {  &#x201c;fileInformation&#x201d;:[  {  &#x201c;extension&#x201d;:&#x201c;jar&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;debug&#x201d;  }  ],  &#x201c;internalComposition&#x201d;:{  &#x201c;compositions&#x201d;:[  {  &#x201c;eventId&#x201d;:&#x201c;fb6ef12d-25fb-4d77-b9fd-87688e66da4j&#x201d;,  &#x201c;sourceChanges&#x201d;:[  {  &#x201c;submitter&#x201d;:{  &#x201c;name&#x201d;:&#x201c;Jane Doe&#x201d;,  &#x201c;email&#x201d;:&#x201c;<a class="externalLink" href="mailto:jane.doe@company.com">jane.doe@company.com</a>&#x201d;  },  &#x201c;SCSEventId&#x201d;:&#x201c;3ce9df6e-cd45-4320-ae66-945f038caa1b&#x201d;,  &#x201c;gitIdentifier&#x201d;:null,  &#x201c;sourceCreations&#x201d;:[  {  &#x201c;SCCEventId&#x201d;:&#x201c;ac085e24-ac4c-41be-912d-08c7afd32285&#x201d;,  &#x201c;author&#x201d;:{  &#x201c;name&#x201d;:&#x201c;John Doe&#x201d;,  &#x201c;id&#x201d;:&#x201c;johndoe&#x201d;,  &#x201c;email&#x201d;:&#x201c;<a class="externalLink" href="mailto:john.doe@company.com&quot;">john.doe@company.com&quot;</a>,  &#x201d;group&#x201c;:&#x201d;Team Gophers&#x201c;  },  &#x201d;issues&quot;:[</p>
+<p>which gives us the following aggregated object:</p>
 
 <div class="source">
-<div class="source"><pre class="prettyprint">                                   ]
-                                },
-                                // This second entry in sourceCreations is the new additions
-                                {
-                                   &quot;SCCEventId&quot;:&quot;552ad6a4-c522-47e2-9195-0481930979e4&quot;,
-                                   &quot;author&quot;:null,
-                                   &quot;issues&quot;:[
-                                      {
-                                         &quot;tracker&quot;:&quot;JIRA&quot;,
-                                         &quot;id&quot;:&quot;JIRA-1234&quot;,
-                                         &quot;type&quot;:&quot;BUG&quot;,
-                                         &quot;uri&quot;:&quot;http://jira.company.com/browse/JIRA-1234&quot;,
-                                         &quot;transition&quot;:&quot;RESOLVED&quot;
-                                      }
-                                   ]
-                                }
-                             ]
-                          }
-                       ],
-                       &quot;name&quot;:&quot;Other composition&quot;,
-                       &quot;time&quot;:5005
-                    }
-                 ]
-              },
-              &quot;id&quot;:&quot;1100572b-c3j4-441e-abc9-b62f48080011&quot;,
-              &quot;gav&quot;:{
-                 &quot;groupId&quot;:&quot;com.othercompany.otherproduct&quot;,
-                 &quot;artifactId&quot;:&quot;other-system&quot;,
-                 &quot;version&quot;:&quot;1.33.0&quot;
-              }
-           }
-        ]
-     }
-  ]
+<div class="source"><pre class="prettyprint">{
+   &quot;fileInformation&quot;:[
+      {
+         &quot;extension&quot;:&quot;jar&quot;,
+         &quot;classifier&quot;:&quot;debug&quot;
+      },
+      {
+         &quot;extension&quot;:&quot;txt&quot;,
+         &quot;classifier&quot;:&quot;test&quot;
+      },
+      {
+         &quot;extension&quot;:&quot;exe&quot;,
+         &quot;classifier&quot;:&quot;application&quot;
+      }
+   ],
+   &quot;buildCommand&quot;:null,
+   &quot;internalComposition&quot;:{
+      &quot;compositions&quot;:[
+         {
+            &quot;eventId&quot;:&quot;fb6ef12d-25fb-4d77-b9fd-87688e66de47&quot;,
+            &quot;name&quot;:&quot;My composition&quot;,
+            &quot;time&quot;:2000,
+            &quot;artifacts&quot;:[
+               {
+                  &quot;fileInformation&quot;:[
+                     {
+                        &quot;extension&quot;:&quot;jar&quot;,
+                        &quot;classifier&quot;:&quot;debug&quot;
+                     }
+                  ],
+                  &quot;internalComposition&quot;:{
+                     &quot;compositions&quot;:[
+                        {
+                           &quot;eventId&quot;:&quot;fb6ef12d-25fb-4d77-b9fd-87688e66da4j&quot;,
+                           &quot;sourceChanges&quot;:[
+                              {
+                                 &quot;submitter&quot;:{
+                                    &quot;name&quot;:&quot;Jane Doe&quot;,
+                                    &quot;email&quot;:&quot;jane.doe@company.com&quot;
+                                 },
+                                 &quot;SCSEventId&quot;:&quot;3ce9df6e-cd45-4320-ae66-945f038caa1b&quot;,
+                                 &quot;gitIdentifier&quot;:null,
+                                 &quot;sourceCreations&quot;:[
+                                    {
+                                       &quot;SCCEventId&quot;:&quot;ac085e24-ac4c-41be-912d-08c7afd32285&quot;,
+                                       &quot;author&quot;:{
+                                          &quot;name&quot;:&quot;John Doe&quot;,
+                                          &quot;id&quot;:&quot;johndoe&quot;,
+                                          &quot;email&quot;:&quot;john.doe@company.com&quot;,
+                                          &quot;group&quot;:&quot;Team Gophers&quot;
+                                       },
+                                       &quot;issues&quot;:[
+
+                                       ]
+                                    },
+                                    // This second entry in sourceCreations is the new additions
+                                    {
+                                       &quot;SCCEventId&quot;:&quot;552ad6a4-c522-47e2-9195-0481930979e4&quot;,
+                                       &quot;author&quot;:null,
+                                       &quot;issues&quot;:[
+                                          {
+                                             &quot;tracker&quot;:&quot;JIRA&quot;,
+                                             &quot;id&quot;:&quot;JIRA-1234&quot;,
+                                             &quot;type&quot;:&quot;BUG&quot;,
+                                             &quot;uri&quot;:&quot;http://jira.company.com/browse/JIRA-1234&quot;,
+                                             &quot;transition&quot;:&quot;RESOLVED&quot;
+                                          }
+                                       ]
+                                    }
+                                 ]
+                              }
+                           ],
+                           &quot;name&quot;:&quot;Other composition&quot;,
+                           &quot;time&quot;:5005
+                        }
+                     ]
+                  },
+                  &quot;id&quot;:&quot;1100572b-c3j4-441e-abc9-b62f48080011&quot;,
+                  &quot;gav&quot;:{
+                     &quot;groupId&quot;:&quot;com.othercompany.otherproduct&quot;,
+                     &quot;artifactId&quot;:&quot;other-system&quot;,
+                     &quot;version&quot;:&quot;1.33.0&quot;
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   &quot;TemplateName&quot;:&quot;ARTIFACT_1&quot;,
+   &quot;id&quot;:&quot;6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43&quot;,
+   &quot;time&quot;:1481875891763,
+   &quot;type&quot;:&quot;EiffelArtifactCreatedEvent&quot;,
+   &quot;gav&quot;:{
+      &quot;groupId&quot;:&quot;com.mycompany.myproduct&quot;,
+      &quot;artifactId&quot;:&quot;sub-system&quot;,
+      &quot;version&quot;:&quot;1.1.0&quot;
+   }
+}
 </pre></div></div>
-<p>},  &#x201c;TemplateName&#x201d;:&#x201c;ARTIFACT_1&#x201d;,  &#x201c;id&#x201d;:&#x201c;6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43&#x201d;,  &#x201c;time&#x201d;:1481875891763,  &#x201c;type&#x201d;:&#x201c;EiffelArtifactCreatedEvent&#x201d;,  &#x201c;gav&#x201d;:{  &#x201c;groupId&#x201d;:&#x201c;com.mycompany.myproduct&#x201d;,  &#x201c;artifactId&#x201d;:&#x201c;sub-system&#x201d;,  &#x201c;version&#x201d;:&#x201c;1.1.0&#x201d;  } } ```</p>
-<p>Now we return back in the tree and process the second <b>EiffelArtifactCreatedEvent</b> making the first composition. So we will append: <tt>
-{
+<p>Now we return back in the tree and process the second <b>EiffelArtifactCreatedEvent</b> making the first composition. So we will append:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">{
    &quot;id&quot;:&quot;4400572b-c3j4-441e-abc9-b62f48080033&quot;,
    &quot;gav&quot;:{
       &quot;version&quot;:&quot;1.99.0&quot;,
@@ -710,69 +859,135 @@
       }
    ]
 }
-</tt> with relative path:</p>
+</pre></div></div>
+<p>with relative path:</p>
 
 <div class="source">
 <div class="source"><pre class="prettyprint">artifacts.1
 </pre></div></div>
 <p>and absolute path:</p>
 <p>internalComposition.compositions.0.artifacts.1</p>
-<p>This results in following aggregated object: ```javascript {  &#x201c;fileInformation&#x201d;:[  {  &#x201c;extension&#x201d;:&#x201c;jar&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;debug&#x201d;  },  {  &#x201c;extension&#x201d;:&#x201c;txt&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;test&#x201d;  },  {  &#x201c;extension&#x201d;:&#x201c;exe&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;application&#x201d;  }  ],  &#x201c;buildCommand&#x201d;:null,  &#x201c;internalComposition&#x201d;:{  &#x201c;compositions&#x201d;:[  {  &#x201c;eventId&#x201d;:&#x201c;fb6ef12d-25fb-4d77-b9fd-87688e66de47&#x201d;,  &#x201c;name&#x201d;:&#x201c;My composition&#x201d;,  &#x201c;time&#x201d;:2000,  &#x201c;artifacts&#x201d;:[  {  &#x201c;fileInformation&#x201d;:[  {  &#x201c;extension&#x201d;:&#x201c;jar&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;debug&#x201d;  }  ],  &#x201c;internalComposition&#x201d;:{  &#x201c;compositions&#x201d;:[  {  &#x201c;eventId&#x201d;:&#x201c;fb6ef12d-25fb-4d77-b9fd-87688e66da4j&#x201d;,  &#x201c;sourceChanges&#x201d;:[  {  &#x201c;submitter&#x201d;:{  &#x201c;name&#x201d;:&#x201c;Jane Doe&#x201d;,  &#x201c;email&#x201d;:&#x201c;<a class="externalLink" href="mailto:jane.doe@company.com">jane.doe@company.com</a>&#x201d;  },  &#x201c;SCSEventId&#x201d;:&#x201c;3ce9df6e-cd45-4320-ae66-945f038caa1b&#x201d;,  &#x201c;gitIdentifier&#x201d;:null,  &#x201c;sourceCreations&#x201d;:[  {  &#x201c;SCCEventId&#x201d;:&#x201c;ac085e24-ac4c-41be-912d-08c7afd32285&#x201d;,  &#x201c;author&#x201d;:{  &#x201c;name&#x201d;:&#x201c;John Doe&#x201d;,  &#x201c;id&#x201d;:&#x201c;johndoe&#x201d;,  &#x201c;email&#x201d;:&#x201c;<a class="externalLink" href="mailto:john.doe@company.com&quot;">john.doe@company.com&quot;</a>,  &#x201d;group&#x201c;:&#x201d;Team Gophers&#x201c;  },  &#x201d;issues&quot;:[</p>
+<p>This results in following aggregated object:</p>
 
 <div class="source">
-<div class="source"><pre class="prettyprint">                                   ]
-                                },
-                                {
-                                   &quot;SCCEventId&quot;:&quot;552ad6a4-c522-47e2-9195-0481930979e4&quot;,
-                                   &quot;author&quot;:null,
-                                   &quot;issues&quot;:[
-                                      {
-                                         &quot;tracker&quot;:&quot;JIRA&quot;,
-                                         &quot;id&quot;:&quot;JIRA-1234&quot;,
-                                         &quot;type&quot;:&quot;BUG&quot;,
-                                         &quot;uri&quot;:&quot;http://jira.company.com/browse/JIRA-1234&quot;,
-                                         &quot;transition&quot;:&quot;RESOLVED&quot;
-                                      }
-                                   ]
-                                }
-                             ]
-                          }
-                       ],
-                       &quot;name&quot;:&quot;Other composition&quot;,
-                       &quot;time&quot;:5005
-                    }
-                 ]
-              },
-              &quot;id&quot;:&quot;1100572b-c3j4-441e-abc9-b62f48080011&quot;,
-              &quot;gav&quot;:{
-                 &quot;groupId&quot;:&quot;com.othercompany.otherproduct&quot;,
-                 &quot;artifactId&quot;:&quot;other-system&quot;,
-                 &quot;version&quot;:&quot;1.33.0&quot;
-              }
-           },
-           // this second artifact information is the new addition to 
-           // internal composition 
-           {
-              &quot;fileInformation&quot;:[
-                 {
-                    &quot;extension&quot;:&quot;jar&quot;,
-                    &quot;classifier&quot;:&quot;debug&quot;
-                 }
-              ],
-              &quot;id&quot;:&quot;4400572b-c3j4-441e-abc9-b62f48080033&quot;,
-              &quot;gav&quot;:{
-                 &quot;groupId&quot;:&quot;com.internalcompany.internalproduct&quot;,
-                 &quot;artifactId&quot;:&quot;internal-system&quot;,
-                 &quot;version&quot;:&quot;1.99.0&quot;
-              }
-           }
-        ]
-     }
-  ]
+<div class="source"><pre class="prettyprint">{
+   &quot;fileInformation&quot;:[
+      {
+         &quot;extension&quot;:&quot;jar&quot;,
+         &quot;classifier&quot;:&quot;debug&quot;
+      },
+      {
+         &quot;extension&quot;:&quot;txt&quot;,
+         &quot;classifier&quot;:&quot;test&quot;
+      },
+      {
+         &quot;extension&quot;:&quot;exe&quot;,
+         &quot;classifier&quot;:&quot;application&quot;
+      }
+   ],
+   &quot;buildCommand&quot;:null,
+   &quot;internalComposition&quot;:{
+      &quot;compositions&quot;:[
+         {
+            &quot;eventId&quot;:&quot;fb6ef12d-25fb-4d77-b9fd-87688e66de47&quot;,
+            &quot;name&quot;:&quot;My composition&quot;,
+            &quot;time&quot;:2000,
+            &quot;artifacts&quot;:[
+               {
+                  &quot;fileInformation&quot;:[
+                     {
+                        &quot;extension&quot;:&quot;jar&quot;,
+                        &quot;classifier&quot;:&quot;debug&quot;
+                     }
+                  ],
+                  &quot;internalComposition&quot;:{
+                     &quot;compositions&quot;:[
+                        {
+                           &quot;eventId&quot;:&quot;fb6ef12d-25fb-4d77-b9fd-87688e66da4j&quot;,
+                           &quot;sourceChanges&quot;:[
+                              {
+                                 &quot;submitter&quot;:{
+                                    &quot;name&quot;:&quot;Jane Doe&quot;,
+                                    &quot;email&quot;:&quot;jane.doe@company.com&quot;
+                                 },
+                                 &quot;SCSEventId&quot;:&quot;3ce9df6e-cd45-4320-ae66-945f038caa1b&quot;,
+                                 &quot;gitIdentifier&quot;:null,
+                                 &quot;sourceCreations&quot;:[
+                                    {
+                                       &quot;SCCEventId&quot;:&quot;ac085e24-ac4c-41be-912d-08c7afd32285&quot;,
+                                       &quot;author&quot;:{
+                                          &quot;name&quot;:&quot;John Doe&quot;,
+                                          &quot;id&quot;:&quot;johndoe&quot;,
+                                          &quot;email&quot;:&quot;john.doe@company.com&quot;,
+                                          &quot;group&quot;:&quot;Team Gophers&quot;
+                                       },
+                                       &quot;issues&quot;:[
+
+                                       ]
+                                    },
+                                    {
+                                       &quot;SCCEventId&quot;:&quot;552ad6a4-c522-47e2-9195-0481930979e4&quot;,
+                                       &quot;author&quot;:null,
+                                       &quot;issues&quot;:[
+                                          {
+                                             &quot;tracker&quot;:&quot;JIRA&quot;,
+                                             &quot;id&quot;:&quot;JIRA-1234&quot;,
+                                             &quot;type&quot;:&quot;BUG&quot;,
+                                             &quot;uri&quot;:&quot;http://jira.company.com/browse/JIRA-1234&quot;,
+                                             &quot;transition&quot;:&quot;RESOLVED&quot;
+                                          }
+                                       ]
+                                    }
+                                 ]
+                              }
+                           ],
+                           &quot;name&quot;:&quot;Other composition&quot;,
+                           &quot;time&quot;:5005
+                        }
+                     ]
+                  },
+                  &quot;id&quot;:&quot;1100572b-c3j4-441e-abc9-b62f48080011&quot;,
+                  &quot;gav&quot;:{
+                     &quot;groupId&quot;:&quot;com.othercompany.otherproduct&quot;,
+                     &quot;artifactId&quot;:&quot;other-system&quot;,
+                     &quot;version&quot;:&quot;1.33.0&quot;
+                  }
+               },
+               // this second artifact information is the new addition to 
+               // internal composition 
+               {
+                  &quot;fileInformation&quot;:[
+                     {
+                        &quot;extension&quot;:&quot;jar&quot;,
+                        &quot;classifier&quot;:&quot;debug&quot;
+                     }
+                  ],
+                  &quot;id&quot;:&quot;4400572b-c3j4-441e-abc9-b62f48080033&quot;,
+                  &quot;gav&quot;:{
+                     &quot;groupId&quot;:&quot;com.internalcompany.internalproduct&quot;,
+                     &quot;artifactId&quot;:&quot;internal-system&quot;,
+                     &quot;version&quot;:&quot;1.99.0&quot;
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   &quot;TemplateName&quot;:&quot;ARTIFACT_1&quot;,
+   &quot;id&quot;:&quot;6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43&quot;,
+   &quot;time&quot;:1481875891763,
+   &quot;type&quot;:&quot;EiffelArtifactCreatedEvent&quot;,
+   &quot;gav&quot;:{
+      &quot;groupId&quot;:&quot;com.mycompany.myproduct&quot;,
+      &quot;artifactId&quot;:&quot;sub-system&quot;,
+      &quot;version&quot;:&quot;1.1.0&quot;
+   }
+}
 </pre></div></div>
-<p>},  &#x201c;TemplateName&#x201d;:&#x201c;ARTIFACT_1&#x201d;,  &#x201c;id&#x201d;:&#x201c;6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43&#x201d;,  &#x201c;time&#x201d;:1481875891763,  &#x201c;type&#x201d;:&#x201c;EiffelArtifactCreatedEvent&#x201d;,  &#x201c;gav&#x201d;:{  &#x201c;groupId&#x201d;:&#x201c;com.mycompany.myproduct&#x201d;,  &#x201c;artifactId&#x201d;:&#x201c;sub-system&#x201d;,  &#x201c;version&#x201d;:&#x201c;1.1.0&#x201d;  } } ```</p>
-<p>At last we aggregate the <b>EiffelArtifactCreatedEvent</b> that the received <b>EiffelArtifactCreatedEvent</b> links to. The same HistoryExtractionRule is used by all <b>EiffelArtifactCreatedEvent</b> and here we will get: <tt>
-{
+<p>At last we aggregate the <b>EiffelArtifactCreatedEvent</b> that the received <b>EiffelArtifactCreatedEvent</b> links to. The same HistoryExtractionRule is used by all <b>EiffelArtifactCreatedEvent</b> and here we will get:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">{
    &quot;id&quot;:&quot;1100572b-c3b4-461e-abc9-b62f48087011&quot;,
    &quot;gav&quot;:{
       &quot;version&quot;:&quot;1.33.0&quot;,
@@ -786,63 +1001,144 @@
       }
    ]
 }
-</tt> to merge at relative path &quot;&quot; and absolute path:</p>
+</pre></div></div>
+<p>to merge at relative path &quot;&quot; and absolute path:</p>
 
 <div class="source">
 <div class="source"><pre class="prettyprint">artifacts.0
 </pre></div></div>
-<p>The final aggregated object is now: ```javascript {  &#x201c;fileInformation&#x201d;:[  {  &#x201c;extension&#x201d;:&#x201c;jar&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;debug&#x201d;  },  {  &#x201c;extension&#x201d;:&#x201c;txt&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;test&#x201d;  },  {  &#x201c;extension&#x201d;:&#x201c;exe&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;application&#x201d;  }  ],  &#x201c;buildCommand&#x201d;:null,  &#x201c;internalComposition&#x201d;:{  &#x201c;compositions&#x201d;:[  {  &#x201c;eventId&#x201d;:&#x201c;fb6ef12d-25fb-4d77-b9fd-87688e66de47&#x201d;,  &#x201c;name&#x201d;:&#x201c;My composition&#x201d;,  &#x201c;time&#x201d;:2000,  &#x201c;artifacts&#x201d;:[  {  &#x201c;fileInformation&#x201d;:[  {  &#x201c;extension&#x201d;:&#x201c;jar&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;debug&#x201d;  }  ],  &#x201c;internalComposition&#x201d;:{  &#x201c;compositions&#x201d;:[  {  &#x201c;eventId&#x201d;:&#x201c;fb6ef12d-25fb-4d77-b9fd-87688e66da4j&#x201d;,  &#x201c;sourceChanges&#x201d;:[  {  &#x201c;submitter&#x201d;:{  &#x201c;name&#x201d;:&#x201c;Jane Doe&#x201d;,  &#x201c;email&#x201d;:&#x201c;<a class="externalLink" href="mailto:jane.doe@company.com">jane.doe@company.com</a>&#x201d;  },  &#x201c;SCSEventId&#x201d;:&#x201c;3ce9df6e-cd45-4320-ae66-945f038caa1b&#x201d;,  &#x201c;gitIdentifier&#x201d;:null,  &#x201c;sourceCreations&#x201d;:[  {  &#x201c;SCCEventId&#x201d;:&#x201c;ac085e24-ac4c-41be-912d-08c7afd32285&#x201d;,  &#x201c;author&#x201d;:{  &#x201c;name&#x201d;:&#x201c;John Doe&#x201d;,  &#x201c;id&#x201d;:&#x201c;johndoe&#x201d;,  &#x201c;email&#x201d;:&#x201c;<a class="externalLink" href="mailto:john.doe@company.com&quot;">john.doe@company.com&quot;</a>,  &#x201d;group&#x201c;:&#x201d;Team Gophers&#x201c;  },  &#x201d;issues&quot;:[</p>
+<p>The final aggregated object is now:</p>
 
 <div class="source">
-<div class="source"><pre class="prettyprint">                                   ]
-                                },
-                                {
-                                   &quot;SCCEventId&quot;:&quot;552ad6a4-c522-47e2-9195-0481930979e4&quot;,
-                                   &quot;author&quot;:null,
-                                   &quot;issues&quot;:[
-                                      {
-                                         &quot;tracker&quot;:&quot;JIRA&quot;,
-                                         &quot;id&quot;:&quot;JIRA-1234&quot;,
-                                         &quot;type&quot;:&quot;BUG&quot;,
-                                         &quot;uri&quot;:&quot;http:\/\/jira.company.com\/browse\/JIRA-1234&quot;,
-                                         &quot;transition&quot;:&quot;RESOLVED&quot;
-                                      }
-                                   ]
-                                }
-                             ]
-                          }
-                       ],
-                       &quot;name&quot;:&quot;Other composition&quot;,
-                       &quot;time&quot;:5005
-                    }
-                 ]
-              },
-              &quot;id&quot;:&quot;1100572b-c3j4-441e-abc9-b62f48080011&quot;,
-              &quot;gav&quot;:{
-                 &quot;groupId&quot;:&quot;com.othercompany.otherproduct&quot;,
-                 &quot;artifactId&quot;:&quot;other-system&quot;,
-                 &quot;version&quot;:&quot;1.33.0&quot;
-              }
-           },
-           {
-              &quot;fileInformation&quot;:[
-                 {
-                    &quot;extension&quot;:&quot;jar&quot;,
-                    &quot;classifier&quot;:&quot;debug&quot;
-                 }
-              ],
-              &quot;id&quot;:&quot;4400572b-c3j4-441e-abc9-b62f48080033&quot;,
-              &quot;gav&quot;:{
-                 &quot;groupId&quot;:&quot;com.internalcompany.internalproduct&quot;,
-                 &quot;artifactId&quot;:&quot;internal-system&quot;,
-                 &quot;version&quot;:&quot;1.99.0&quot;
-              }
-           }
-        ]
-     }
-  ]
+<div class="source"><pre class="prettyprint">{
+   &quot;fileInformation&quot;:[
+      {
+         &quot;extension&quot;:&quot;jar&quot;,
+         &quot;classifier&quot;:&quot;debug&quot;
+      },
+      {
+         &quot;extension&quot;:&quot;txt&quot;,
+         &quot;classifier&quot;:&quot;test&quot;
+      },
+      {
+         &quot;extension&quot;:&quot;exe&quot;,
+         &quot;classifier&quot;:&quot;application&quot;
+      }
+   ],
+   &quot;buildCommand&quot;:null,
+   &quot;internalComposition&quot;:{
+      &quot;compositions&quot;:[
+         {
+            &quot;eventId&quot;:&quot;fb6ef12d-25fb-4d77-b9fd-87688e66de47&quot;,
+            &quot;name&quot;:&quot;My composition&quot;,
+            &quot;time&quot;:2000,
+            &quot;artifacts&quot;:[
+               {
+                  &quot;fileInformation&quot;:[
+                     {
+                        &quot;extension&quot;:&quot;jar&quot;,
+                        &quot;classifier&quot;:&quot;debug&quot;
+                     }
+                  ],
+                  &quot;internalComposition&quot;:{
+                     &quot;compositions&quot;:[
+                        {
+                           &quot;eventId&quot;:&quot;fb6ef12d-25fb-4d77-b9fd-87688e66da4j&quot;,
+                           &quot;sourceChanges&quot;:[
+                              {
+                                 &quot;submitter&quot;:{
+                                    &quot;name&quot;:&quot;Jane Doe&quot;,
+                                    &quot;email&quot;:&quot;jane.doe@company.com&quot;
+                                 },
+                                 &quot;SCSEventId&quot;:&quot;3ce9df6e-cd45-4320-ae66-945f038caa1b&quot;,
+                                 &quot;gitIdentifier&quot;:null,
+                                 &quot;sourceCreations&quot;:[
+                                    {
+                                       &quot;SCCEventId&quot;:&quot;ac085e24-ac4c-41be-912d-08c7afd32285&quot;,
+                                       &quot;author&quot;:{
+                                          &quot;name&quot;:&quot;John Doe&quot;,
+                                          &quot;id&quot;:&quot;johndoe&quot;,
+                                          &quot;email&quot;:&quot;john.doe@company.com&quot;,
+                                          &quot;group&quot;:&quot;Team Gophers&quot;
+                                       },
+                                       &quot;issues&quot;:[
+
+                                       ]
+                                    },
+                                    {
+                                       &quot;SCCEventId&quot;:&quot;552ad6a4-c522-47e2-9195-0481930979e4&quot;,
+                                       &quot;author&quot;:null,
+                                       &quot;issues&quot;:[
+                                          {
+                                             &quot;tracker&quot;:&quot;JIRA&quot;,
+                                             &quot;id&quot;:&quot;JIRA-1234&quot;,
+                                             &quot;type&quot;:&quot;BUG&quot;,
+                                             &quot;uri&quot;:&quot;http:\/\/jira.company.com\/browse\/JIRA-1234&quot;,
+                                             &quot;transition&quot;:&quot;RESOLVED&quot;
+                                          }
+                                       ]
+                                    }
+                                 ]
+                              }
+                           ],
+                           &quot;name&quot;:&quot;Other composition&quot;,
+                           &quot;time&quot;:5005
+                        }
+                     ]
+                  },
+                  &quot;id&quot;:&quot;1100572b-c3j4-441e-abc9-b62f48080011&quot;,
+                  &quot;gav&quot;:{
+                     &quot;groupId&quot;:&quot;com.othercompany.otherproduct&quot;,
+                     &quot;artifactId&quot;:&quot;other-system&quot;,
+                     &quot;version&quot;:&quot;1.33.0&quot;
+                  }
+               },
+               {
+                  &quot;fileInformation&quot;:[
+                     {
+                        &quot;extension&quot;:&quot;jar&quot;,
+                        &quot;classifier&quot;:&quot;debug&quot;
+                     }
+                  ],
+                  &quot;id&quot;:&quot;4400572b-c3j4-441e-abc9-b62f48080033&quot;,
+                  &quot;gav&quot;:{
+                     &quot;groupId&quot;:&quot;com.internalcompany.internalproduct&quot;,
+                     &quot;artifactId&quot;:&quot;internal-system&quot;,
+                     &quot;version&quot;:&quot;1.99.0&quot;
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   &quot;TemplateName&quot;:&quot;ARTIFACT_1&quot;,
+   &quot;id&quot;:&quot;6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43&quot;,
+   &quot;time&quot;:1481875891763,
+   &quot;type&quot;:&quot;EiffelArtifactCreatedEvent&quot;,
+   &quot;gav&quot;:{
+      &quot;groupId&quot;:&quot;com.mycompany.myproduct&quot;,
+      &quot;artifactId&quot;:&quot;sub-system&quot;,
+      &quot;version&quot;:&quot;1.1.0&quot;
+   },
+   // artifacts array is the last addition now
+   &quot;artifacts&quot;:[
+      {
+         &quot;fileInformation&quot;:[
+            {
+               &quot;extension&quot;:&quot;jar&quot;,
+               &quot;classifier&quot;:&quot;debug&quot;
+            }
+         ],
+         &quot;id&quot;:&quot;1100572b-c3b4-461e-abc9-b62f48087011&quot;,
+         &quot;gav&quot;:{
+            &quot;groupId&quot;:&quot;com.othercompany.secondproduct&quot;,
+            &quot;artifactId&quot;:&quot;other-system&quot;,
+            &quot;version&quot;:&quot;1.33.0&quot;
+         }
+      }
+   ]
+}
 </pre></div></div>
-<p>},  &#x201c;TemplateName&#x201d;:&#x201c;ARTIFACT_1&#x201d;,  &#x201c;id&#x201d;:&#x201c;6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43&#x201d;,  &#x201c;time&#x201d;:1481875891763,  &#x201c;type&#x201d;:&#x201c;EiffelArtifactCreatedEvent&#x201d;,  &#x201c;gav&#x201d;:{  &#x201c;groupId&#x201d;:&#x201c;com.mycompany.myproduct&#x201d;,  &#x201c;artifactId&#x201d;:&#x201c;sub-system&#x201d;,  &#x201c;version&#x201d;:&#x201c;1.1.0&#x201d;  },  // artifacts array is the last addition now  &#x201c;artifacts&#x201d;:[  {  &#x201c;fileInformation&#x201d;:[  {  &#x201c;extension&#x201d;:&#x201c;jar&#x201d;,  &#x201c;classifier&#x201d;:&#x201c;debug&#x201d;  }  ],  &#x201c;id&#x201d;:&#x201c;1100572b-c3b4-461e-abc9-b62f48087011&#x201d;,  &#x201c;gav&#x201d;:{  &#x201c;groupId&#x201d;:&#x201c;com.othercompany.secondproduct&#x201d;,  &#x201c;artifactId&#x201d;:&#x201c;other-system&#x201d;,  &#x201c;version&#x201d;:&#x201c;1.33.0&#x201d;  }  }  ] } ``` </p>
                   </div>
             </div>
           </div>

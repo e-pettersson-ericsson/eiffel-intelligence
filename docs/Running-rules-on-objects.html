@@ -46,7 +46,7 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
         <ul class="dropdown-menu">
         
-                      <li>      <a href="index.html"  title="Index">Index</a>
+                      <li>      <a href="index.html"  title="Home">Home</a>
 </li>
                   
                       <li>      <a href="Configuration.html"  title="Configuration">Configuration</a>
@@ -109,7 +109,7 @@
 </li>
                                   <li>      <a href="EiffelConfidenceLevelModifiedEvent-Aggregation.html"  title="EiffelConfidenceLevelModifiedEvent">EiffelConfidenceLevelModifiedEvent</a>
 </li>
-                                  <li>      <a href="wiki/Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
+                                  <li>      <a href="Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
 </li>
                               </ul>
             </li>
@@ -144,8 +144,8 @@
         <ul class="breadcrumb">
               
                               <li class="">
-                    <a href="index.html" title="Index">
-        Index</a>
+                    <a href="index.html" title="Home">
+        Home</a>
                     <span class="divider">-</span>
       </li>
         <li class="active ">Running Rules On Objects</li>
@@ -169,9 +169,9 @@
                               
       <li>
   
-                          <a href="index.html" title="Index">
+                          <a href="index.html" title="Home">
           <span class="none"></span>
-        Index</a>
+        Home</a>
             </li>
                 
       <li>
@@ -313,7 +313,7 @@
     </tr>
   </tbody>
 </table>
-<p>Before deploying a new instance of Eiffel Intelligence it is good to test the desired rules that they give the desired outcome. Therefore it is possible to test the rules on a test instance of Eiffel Intelligence. This means that this instance needs to be dedicated to only testing rules and it can be one per company,organization or department. The property controlling this feature should be set to true:</p>
+<p>Before deploying a new instance of Eiffel Intelligence it is good to test the desired rules that they give the desired outcome. Therefore it is possible to test the rules on a test instance of Eiffel Intelligence. This means that this instance needs to be dedicated to only testing rules and it can be one per company, organization or department. The property controlling this feature should be set to true:</p>
 
 <div class="source">
 <div class="source"><pre class="prettyprint">testaggregated.enabled: true
@@ -327,18 +327,23 @@
 <div class="source">
 <div class="source"><pre class="prettyprint">POST /rules/rule-check
 </pre></div></div>
-<p><b>Body (application/json)</b> <tt>javascript
-{
+<p><b>Body (application/json)</b></p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">{
   &quot;rule&quot;: &lt;JMESPATH Expression&gt;,
   &quot;event&quot; &lt;Eiffel Event&gt;: 
 }
-</tt> Examples of this endpoint using curl </p>
+</pre></div></div>
+<p>Examples of this endpoint using curl </p>
 
 <div class="source">
 <div class="source"><pre class="prettyprint">curl -X POST -H &quot;Content-type:application/json&quot; --data @body.json http://localhost:8090/rules/rule-check
 </pre></div></div>
-<p>For example if we run the following JMESPath expresion: <tt>javascript
-{
+<p>For example if we run the following JMESPath expression:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">{
    id:meta.id,
    type:meta.type,
    time:meta.time,
@@ -346,8 +351,11 @@
    fileInformation:data.fileInformation,
    buildCommand:data.buildCommand
 }
-</tt> on Eiffel event: <tt>javascript
-{
+</pre></div></div>
+<p>on Eiffel event:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">{
    &quot;links&quot;: [
       {
          &quot;target&quot;: &quot;1921bc9f-59e1-45b7-8bb1-26602ed667b1&quot;,
@@ -395,8 +403,11 @@
       }
    }
 }
-</tt> will give <tt>javascript
-{
+</pre></div></div>
+<p>will give</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">{
   &quot;id&quot;: &quot;e90daae3-bf3f-4b0a-b899-67834fd5ebd0&quot;,
   &quot;type&quot;: &quot;EiffelArtifactCreatedEvent&quot;,
   &quot;time&quot;: 1484061386383,
@@ -413,7 +424,7 @@
   ],
   &quot;buildCommand&quot;: null
 }
-</tt></p></div>
+</pre></div></div></div>
 <div class="section">
 <h2><a name="Test_a_list_of_rule_sets_on_given_list_of_events"></a>Test a list of rule sets on given list of events</h2>
 <p>This end point is to test a complete aggregation using rule sets for every event you need to be aggregated. And a list of events. The result is the aggregated object containing the desired information from the events as you have specified in the rules.</p>

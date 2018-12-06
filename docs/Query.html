@@ -46,7 +46,7 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
         <ul class="dropdown-menu">
         
-                      <li>      <a href="index.html"  title="Index">Index</a>
+                      <li>      <a href="index.html"  title="Home">Home</a>
 </li>
                   
                       <li>      <a href="Configuration.html"  title="Configuration">Configuration</a>
@@ -109,7 +109,7 @@
 </li>
                                   <li>      <a href="EiffelConfidenceLevelModifiedEvent-Aggregation.html"  title="EiffelConfidenceLevelModifiedEvent">EiffelConfidenceLevelModifiedEvent</a>
 </li>
-                                  <li>      <a href="wiki/Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
+                                  <li>      <a href="Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
 </li>
                               </ul>
             </li>
@@ -144,8 +144,8 @@
         <ul class="breadcrumb">
               
                               <li class="">
-                    <a href="index.html" title="Index">
-        Index</a>
+                    <a href="index.html" title="Home">
+        Home</a>
                     <span class="divider">-</span>
       </li>
         <li class="active ">Query</li>
@@ -169,9 +169,9 @@
                               
       <li>
   
-                          <a href="index.html" title="Index">
+                          <a href="index.html" title="Home">
           <span class="none"></span>
-        Index</a>
+        Home</a>
             </li>
                 
       <li>
@@ -353,11 +353,28 @@
 <div class="source">
 <div class="source"><pre class="prettyprint">curl -X POST -H &quot;Content-type: application/json&quot;  --data @Body.json http://localhost:34911/query
 </pre></div></div>
-<p>Examples of criterias:<br />``` javascript // This returns all objects where the object.testCaseExecutions.outcome.id is&#x201c;TC5&#x201d;<br />// or object.testCaseExecutions.outcome.id is &#x201c;TC6&#x201d; and &#x201c;object.gav.groupId&#x201d;<br />// is &#x201c;com.mycompany.myproduct&#x201d;.</p>
-<p>{  &#x201c;criteria&#x201d;: {  &#x201c;$or&#x201d;: [  {  &#x201c;object.testCaseExecutions.outcome.id&#x201d;:&#x201c;TC5&#x201d;  }, {  &#x201c;object.testCaseExecutions.outcome.id&#x201d;:&#x201c;TC6&#x201d;  }  ],  &#x201c;object.gav.groupId&#x201d;:&#x201c;com.mycompany.myproduct&#x201d;  } } ```</p>
+<p>Examples of criterias: </p>
 
 <div class="source">
-<div class="source"><pre class="prettyprint">// This returns all objects where TC5 succeeded in 
+<div class="source"><pre class="prettyprint">// This returns all objects where the object.testCaseExecutions.outcome.id is&quot;TC5&quot;  
+// or object.testCaseExecutions.outcome.id is &quot;TC6&quot; and &quot;object.gav.groupId&quot;  
+// is &quot;com.mycompany.myproduct&quot;.
+
+{
+  &quot;criteria&quot;: {
+    &quot;$or&quot;: [
+      {
+        &quot;object.testCaseExecutions.outcome.id&quot;:&quot;TC5&quot;
+      }, {
+        &quot;object.testCaseExecutions.outcome.id&quot;:&quot;TC6&quot;
+      }
+    ],
+    &quot;object.gav.groupId&quot;:&quot;com.mycompany.myproduct&quot;
+  }
+}
+
+
+// This returns all objects where TC5 succeeded in 
 // the array testCaseExecutions and object.gav.groupId is &quot;com.mycompany.myproduct&quot;.
 // Options section is optional.
 
@@ -375,10 +392,8 @@
   }
 }
 
-</pre></div></div>
 
-<div class="source">
-<div class="source"><pre class="prettyprint">// This returns all objects where TC5 succeeded 
+// This returns all objects where TC5 succeeded 
 // and are related to JIRA ticket JIRA-1234
 {
     &quot;criteria&quot;: {   
@@ -397,7 +412,7 @@
                      if (obj[k] == value &amp;&amp; k == searchKey) {                     
                          return true;                        
                      }
-          
+
                      if (isObject(obj[k]) &amp;&amp; obj[k] !== null) {              
                          if (searchInObj(obj[k])) {
                              return true;
@@ -410,37 +425,69 @@
     }
 }
 </pre></div></div>
-<p>NOTE: It should be noted that &#x201c;object&#x201d; is a key word. It is replaced dynamically in the code, and is configured in the application.properties file. e.g.,In string &#x201c;object.testCaseExecutions.outcome.id&#x201d;, substring &#x201c;object&#x201d; is a key word.</p></div>
+<p>NOTE: It should be noted that &#x201c;object&#x201d; is a key word. It is replaced dynamically in the code, and is configured in the application.properties file. e.g., in string &#x201c;object.testCaseExecutions.outcome.id&#x201d;, substring &#x201c;object&#x201d; is a key word.</p></div>
 <div class="section">
 <h2><a name="Example_of_freestyle_query_that_returns_all_aggregated_objects"></a>Example of freestyle query that returns all aggregated objects</h2>
 <p>By using a query that contains only empty &#x201c;criteria&#x201d; it is possible to return all aggregated objects from the database. The aggregated objects will be returned from specific collection (which name is defined by property aggregated.collection.name) that is stored in specific database (which name is defined by property spring.data.mongodb.database). All properties can be found in <a class="externalLink" href="https://github.com/Ericsson/eiffel-intelligence/blob/master/src/main/resources/application.properties">application&#x2019;s properties</a>.</p>
-<p>Example: ``` javascript</p>
-<p>{  &#x201c;criteria&#x201d;: {} }</p>
+<p>Example:</p>
 
 <div class="source">
-<div class="source"><pre class="prettyprint">## Query an aggregated object and filter it with specific key
-It is possible to filter the object and return only values with specific key or path. To do this, it is required to add filter condition to the json body. The parameter of filter condition is a JMESPath expression, you can read more about that [here](http://jmespath.org/tutorial.html#pipe-expressions). 
-
-Example:
-</pre></div></div>
-<p>// This match an object in the same way as in the previous example. And then filter // it and returns eventId that has a path &#x201c;aggregatedObject.publications[0].eventId&#x201d;. </p>
-<p>{  &#x201c;criteria&#x201d;: {  &#x201c;object.testCaseExecutions&#x201d;: {  &#x201c;$elemMatch&#x201d;: {  &#x201c;outcome.conclusion&#x201d;: &#x201c;SUCCESSFUL&#x201d;,  &#x201c;outcome.id&#x201d;: &#x201c;TC5&#x201d;  }  }  },  &#x201c;options&#x201d;: {  &#x201c;object.gav.groupId&#x201d;: &#x201c;com.mycompany.myproduct&#x201d;  },  &#x201c;filter&#x201d; : &#x201c;aggregatedObject.publications[0].eventId&#x201d; }</p>
-
-<div class="source">
-<div class="source"><pre class="prettyprint">To filter with only the key or the partial path, it is required to use &quot;incomplete_path_filter(@, 'some key')&quot;.
-
-Example:
-</pre></div></div>
-<p>// This finds all objects where groupId is &#x201c;com.mycompany.myproduct&#x201d;, artifactId is // &#x201c;sub-system&#x201d; and version is &#x201c;1.1.0&#x201d;. Then it filters those objects and returns // all values that has &#x201c;svnIdentifier&#x201d; as a key. </p>
-<p>{  &#x201c;criteria&#x201d;: {  &#x201c;object.gav.groupId&#x201d;:&#x201c;com.mycompany.myproduct&#x201d;,  &#x201c;object.gav.artifactId&#x201d;:&#x201c;sub-system&#x201d;,  &#x201c;object.gav.version&#x201d;:&#x201c;1.1.0&#x201d;  },  &#x201c;filter&#x201d; : &#x201c;incomplete_path_filter(@, &#x2018;svnIdentifier&#x2019;)&#x201d; }</p>
+<div class="source"><pre class="prettyprint">{
+  &quot;criteria&quot;: {}
+}
+</pre></div></div></div>
+<div class="section">
+<h2><a name="Query_an_aggregated_object_and_filter_it_with_specific_key"></a>Query an aggregated object and filter it with specific key</h2>
+<p>It is possible to filter the object and return only values with specific key or path. To do this, it is required to add filter condition to the json body. The parameter of filter condition is a JMESPath expression, you can read more about that <a class="externalLink" href="http://jmespath.org/tutorial.html#pipe-expressions">here</a>. </p>
+<p>Example:</p>
 
 <div class="source">
-<div class="source"><pre class="prettyprint">As the filter functionality takes a plain jmespath expression it can be a more complex expression aswell. In the case below we retrieve all aggregated objects that contains a certain commit using the criteria(MongoDB query) and then filter out which confidence levels the artifact has succeeded on. NOTE that the MongoDB query aswell as the jmespath expression needs to be on the same line as json cannot handle multilines inside a string. Although some tools such as curl will automatically minimize.
+<div class="source"><pre class="prettyprint">// This match an object in the same way as in the previous example. And then filter 
+// it and returns eventId that has a path &quot;aggregatedObject.publications[0].eventId&quot;. 
 
-
-Example
+{
+  &quot;criteria&quot;: {
+    &quot;object.testCaseExecutions&quot;: {
+      &quot;$elemMatch&quot;: {
+        &quot;outcome.conclusion&quot;: &quot;SUCCESSFUL&quot;,
+        &quot;outcome.id&quot;: &quot;TC5&quot;
+      }
+    }
+  },
+  &quot;options&quot;: {
+    &quot;object.gav.groupId&quot;: &quot;com.mycompany.myproduct&quot;
+  },
+  &quot;filter&quot; : &quot;aggregatedObject.publications[0].eventId&quot;
+}
 </pre></div></div>
-<p>{  &#x201c;criteria&#x201d;: {  &#x201c;$where&#x201d;: &#x201c;function(){ var searchKey = &#x2018;id&#x2019;; var value = &#x2018;JIRA-1234&#x2019;; return searchInObj(obj); function searchInObj(obj){ for (var k in obj){ if (obj[k] == value &amp;&amp; k == searchKey) { return true; } if (isObject(obj[k]) &amp;&amp; obj[k] !== null) { if (searchInObj(obj[k])) { return true;}}} return false; }}&#x201d;  },  &#x201c;filter&#x201d;: &#x201c;{id: aggregatedObject.id, artifactGav:aggregatedObject.gav, confidenceLevels:aggregatedObject.confidenceLevels[?value==&#x2018;SUCCESS&#x2019;].{name: name, value: value}}&#x201d; } ```</p></div>
+<p>To filter with only the key or the partial path, it is required to use &#x201c;incomplete_path_filter(@, &#x2018;some key&#x2019;)&#x201d;.</p>
+<p>Example:</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">// This finds all objects where groupId is &quot;com.mycompany.myproduct&quot;, artifactId is 
+// &quot;sub-system&quot; and version is &quot;1.1.0&quot;. Then it filters those objects and returns 
+// all values that has &quot;svnIdentifier&quot; as a key. 
+
+{
+  &quot;criteria&quot;: {
+     &quot;object.gav.groupId&quot;:&quot;com.mycompany.myproduct&quot;,
+     &quot;object.gav.artifactId&quot;:&quot;sub-system&quot;,
+     &quot;object.gav.version&quot;:&quot;1.1.0&quot;
+  },
+  &quot;filter&quot; : &quot;incomplete_path_filter(@, 'svnIdentifier')&quot;
+}
+</pre></div></div>
+<p>As the filter functionality takes a plain jmespath expression it can be a more complex expression aswell. In the case below we retrieve all aggregated objects that contains a certain commit using the criteria(MongoDB query) and then filter out which confidence levels the artifact has succeeded on. NOTE that the Mongo DB query aswell as the jmespath expression needs to be on the same line as json cannot handle multilines inside a string. Although some tools such as curl will automatically minimize.</p>
+<p>Example</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">{
+    &quot;criteria&quot;: {
+        &quot;$where&quot;: &quot;function(){ var searchKey = 'id'; var value = 'JIRA-1234'; return searchInObj(obj); function searchInObj(obj){ for (var k in obj){ if (obj[k] == value &amp;&amp; k == searchKey) { return true;  } if (isObject(obj[k]) &amp;&amp; obj[k] !== null) { if (searchInObj(obj[k])) { return true;}}} return false; }}&quot;
+    },
+    &quot;filter&quot;: &quot;{id: aggregatedObject.id, artifactGav:aggregatedObject.gav, confidenceLevels:aggregatedObject.confidenceLevels[?value=='SUCCESS'].{name: name, value: value}}&quot;
+}
+</pre></div></div></div>
 <div class="section">
 <h2><a name="Query_missed_notifications"></a>Query missed notifications</h2>
 

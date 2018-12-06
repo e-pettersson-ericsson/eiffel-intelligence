@@ -46,7 +46,7 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
         <ul class="dropdown-menu">
         
-                      <li>      <a href="index.html"  title="Index">Index</a>
+                      <li>      <a href="index.html"  title="Home">Home</a>
 </li>
                   
                       <li>      <a href="Configuration.html"  title="Configuration">Configuration</a>
@@ -109,7 +109,7 @@
 </li>
                                   <li>      <a href="EiffelConfidenceLevelModifiedEvent-Aggregation.html"  title="EiffelConfidenceLevelModifiedEvent">EiffelConfidenceLevelModifiedEvent</a>
 </li>
-                                  <li>      <a href="wiki/Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
+                                  <li>      <a href="Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
 </li>
                               </ul>
             </li>
@@ -144,8 +144,8 @@
         <ul class="breadcrumb">
               
                               <li class="">
-                    <a href="index.html" title="Index">
-        Index</a>
+                    <a href="index.html" title="Home">
+        Home</a>
                     <span class="divider">-</span>
       </li>
         <li class="active ">Rules</li>
@@ -169,9 +169,9 @@
                               
       <li>
   
-                          <a href="index.html" title="Index">
+                          <a href="index.html" title="Home">
           <span class="none"></span>
-        Index</a>
+        Home</a>
             </li>
                 
       <li>
@@ -281,12 +281,12 @@ null
 <p>Lets do some more complicated example on Eiffel event where we need to extract the &#x201c;SUCCESS&#x201d; from the event. The expression for such JSON query will be data.value</p></div>
 <div class="section">
 <h2><a name="Rule_set_up"></a>Rule set up</h2>
-<p>Rules for object aggregation consist of JSON object with a defined structure inside it. Key in this object is rule specification and value is JMESPath identifier. Separate rule set is created for each event type that is going to take participation in creating of aggregated object. This means that if you want to create your aggregated object from 3 event types and all other event types to discard, you will need 3 set of rules. Each rule might contain some of these keys, that have not null or empty values. Explicit list of rule keys are bellow:</p>
+<p>Rules for object aggregation consist of JSON object with a defined structure inside it. Key in this object is rule specification and value is JMESPath identifier. Separate rule set is created for each event type that is going to take participation in creating of aggregated object. This means that if you want to create your aggregated object from 3 event types and all other event types to discard, you will need 3 set of rules. Each rule might contain some of these keys, that have not null or empty values. Explicit list of rule keys are below:</p>
 <p><b>TemplateName</b> - used for specifying a template group, any string you like to name your template</p>
 <p><b>Type</b> - Eiffel event type, which will be used to find the matching rule set for the received Eiffel event while creating aggregated object. Example: &#x201c;EiffelConfidenceLevelModifiedEvent&#x201d;</p>
 <p><b>TypeRule</b>- JMESPath identifier for the location of Eiffel event type in received Eiffel event. Example: &#x201c;meta.type&#x201d;.</p>
 <p><b>IdRule</b> - JMESPath identifier for the location of Eiffel event id in received Eiffel event. Example: &#x201c;meta.id&#x201d;. Used as fall back when storing in database and no id is provided or to link id of aggregated objects to events that contributed to the aggregated object.</p>
-<p><b>StartEvent</b> - denotes if this event type starts the object aggregation. If StartEvent is &#x201c;YES&#x201d; then it will be the first processed event in the aggregation sequence. If StartEvent is &#x201c;NO&#x201d; then Eiffel event of this type will be used to append information to existing aggregated object. If no aggregated object exist then it will wait a certain time as defined by property <i>waitlist.collection.ttlValue</i> in <a class="externalLink" href="https://github.com/Ericsson/eiffel-intelligence/blob/master/src/main/resources/application.properties">application&#x2019;s properties</a> until wanted aggregated object has been created. If no aggregated object is created in time then the event will no longer be processed and it will be removed from the wait list.</p>
+<p><b>StartEvent</b> - denotes if this event type starts the object aggregation. If StartEvent is &#x201c;YES&#x201d; then it will be the first processed event in the aggregation sequence. If StartEvent is &#x201c;NO&#x201d; then Eiffel event of this type will be used to append information to existing aggregated object. If no aggregated object exist then it will wait a certain time as defined by property  <i>waitlist.collection.ttlValue</i> in <a class="externalLink" href="https://github.com/Ericsson/eiffel-intelligence/blob/master/src/main/resources/application.properties">application&#x2019;s properties</a>  until wanted aggregated object has been created. If no aggregated object is  created in time then the event will no longer be processed and it will be  removed from the wait list.</p>
 <p><b>IdentifyRules</b> - JMESPath identifier of ids that will be used to search for an existing aggregated object. Should produce an JSON array, for example  &#x201c;[meta.id]&#x201d; </p>
 <p>which will return the specified field in array </p>
 
@@ -298,7 +298,7 @@ null
 <div class="source">
 <div class="source"><pre class="prettyprint">&quot;links | [?type=='CAUSE'].target&quot;
 </pre></div></div>
-<p>which will extract the event id from links array value of target, where &#x201c;type&#x201d; is equal &#x201c;CAUSE&#x201d;. Links in an Eiffel event look like </p>
+<p>which will extract the event id from links array value of target, where &#x201c;type&#x201d;  is equal &#x201c;CAUSE&#x201d;. Links in an Eiffel event look like </p>
 
 <div class="source">
 <div class="source"><pre class="prettyprint">{
@@ -328,7 +328,7 @@ null
  &quot;cfce572b-c3j4-441e-abc9-b62f48080ca2&quot;
 ]
 </pre></div></div>
-<p><b>MatchIdRules</b> - This rule is used to search in database containing the aggregated objects. The syntax of this rule is specific to querying in MongoDB. Use marker &#x201c;%IdentifyRules_objid%&#x201d; to inject the ids generated by <b><i>IdentifyRules</i></b>. Examples: </p>
+<p><b>MatchIdRules</b> - This rule is used to search in database containing the aggregated objects. The syntax of this rule is specific to querying in Mongo DB. Use marker &#x201c;%IdentifyRules_objid%&#x201d; to inject the ids generated by <b><i>IdentifyRules</i></b>. Examples: </p>
 
 <div class="source">
 <div class="source"><pre class="prettyprint">{&quot;_id&quot;: &quot;%IdentifyRules_objid%&quot;}, 

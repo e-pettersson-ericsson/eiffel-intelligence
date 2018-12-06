@@ -46,7 +46,7 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
         <ul class="dropdown-menu">
         
-                      <li>      <a href="index.html"  title="Index">Index</a>
+                      <li>      <a href="index.html"  title="Home">Home</a>
 </li>
                   
                       <li>      <a href="Configuration.html"  title="Configuration">Configuration</a>
@@ -109,7 +109,7 @@
 </li>
                                   <li>      <a href="EiffelConfidenceLevelModifiedEvent-Aggregation.html"  title="EiffelConfidenceLevelModifiedEvent">EiffelConfidenceLevelModifiedEvent</a>
 </li>
-                                  <li>      <a href="wiki/Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
+                                  <li>      <a href="Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
 </li>
                               </ul>
             </li>
@@ -144,8 +144,8 @@
         <ul class="breadcrumb">
               
                               <li class="">
-                    <a href="index.html" title="Index">
-        Index</a>
+                    <a href="index.html" title="Home">
+        Home</a>
                     <span class="divider">-</span>
       </li>
         <li class="active ">Subscription API</li>
@@ -169,9 +169,9 @@
                               
       <li>
   
-                          <a href="index.html" title="Index">
+                          <a href="index.html" title="Home">
           <span class="none"></span>
-        Index</a>
+        Home</a>
             </li>
                 
       <li>
@@ -358,8 +358,10 @@
 <div class="source">
 <div class="source"><pre class="prettyprint">curl -X POST -H &quot;Content-type: application/json&quot; --data @&lt;path to file&gt; http://&lt;host&gt;:8090/subscriptions
 </pre></div></div>
-<p>Example subscriptions <tt>javascript
-[
+<p>Example subscriptions</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">[
   {
     &quot;subscriptionName&quot;: &quot;Subscription_Test&quot;,
     &quot;ldapUserName&quot;: &quot;ABC&quot;,
@@ -403,10 +405,9 @@
     ]
   }
 ]
-</tt></p>
 
-<div class="source">
-<div class="source"><pre class="prettyprint">// this subscription will trigger a REST POST CALL
+
+// this subscription will trigger a REST POST CALL
 // when an artifact for issue JIRA-1234
 // has passed testcase TC5 successfully
 {
@@ -438,9 +439,19 @@
     &quot;subscriptionName&quot;: &quot;artifactRequirementSubscription&quot;,
     &quot;ldapUserName&quot;: &quot;ABC&quot;
 }
-
 </pre></div></div>
-<p>Example of a subscription array ```javascript [  {  ..Subscription 1..  },  {  ..Subscription 2..  } ] ````</p></div>
+<p>Example of a subscription array</p>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">[
+  {
+    ..Subscription 1..
+  },
+  {
+    ..Subscription 2..
+  }
+]
+</pre></div></div></div>
 <div class="section">
 <h2><a name="Get_subscriptions_for_the_given_names"></a>Get subscriptions for the given names</h2>
 <p>Get a single specific subscription or get multiples subscriptions with a comma separated list to the same endpoint</p>

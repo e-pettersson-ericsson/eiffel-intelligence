@@ -46,7 +46,7 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
         <ul class="dropdown-menu">
         
-                      <li>      <a href="index.html"  title="Index">Index</a>
+                      <li>      <a href="index.html"  title="Home">Home</a>
 </li>
                   
                       <li>      <a href="Configuration.html"  title="Configuration">Configuration</a>
@@ -109,7 +109,7 @@
 </li>
                                   <li>      <a href="EiffelConfidenceLevelModifiedEvent-Aggregation.html"  title="EiffelConfidenceLevelModifiedEvent">EiffelConfidenceLevelModifiedEvent</a>
 </li>
-                                  <li>      <a href="wiki/Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
+                                  <li>      <a href="Step-by-Step-Subscription-Notification.html"  title="Step-by-step subscription notification">Step-by-step subscription notification</a>
 </li>
                               </ul>
             </li>
@@ -144,8 +144,8 @@
         <ul class="breadcrumb">
               
                               <li class="">
-                    <a href="index.html" title="Index">
-        Index</a>
+                    <a href="index.html" title="Home">
+        Home</a>
                     <span class="divider">-</span>
       </li>
         <li class="active ">Query Aggregated Objects</li>
@@ -169,9 +169,9 @@
                               
       <li>
   
-                          <a href="index.html" title="Index">
+                          <a href="index.html" title="Home">
           <span class="none"></span>
-        Index</a>
+        Home</a>
             </li>
                 
       <li>
@@ -268,24 +268,24 @@
 </pre></div></div></li>
   
 <li>
-<p>The criteria can be passed as form body in a post request, example of body is presented below. <i>Options</i> section is optional. <tt>javascript
-// This returns all objects that fulfills all three criteria. 
+<p>The criteria can be passed as form body in a post request, example of body is presented below. <i>Options</i> section is optional.</p></li>
+</ol>
+
+<div class="source">
+<div class="source"><pre class="prettyprint">// This returns all objects that fulfills all three criteria. 
 // Notice that this is the same as just sending the id as criteria.
 // Since there will not be any other object with same id
 {
    &quot;criteria&quot;:{
-  &quot;testCaseExecutions.testCase.verdict&quot;:&quot;PASSED&quot;,
-  &quot;testCaseExecutions.testCase.id&quot;:&quot;TC5&quot;
+      &quot;testCaseExecutions.testCase.verdict&quot;:&quot;PASSED&quot;,
+      &quot;testCaseExecutions.testCase.id&quot;:&quot;TC5&quot;
    },
    &quot;options&quot;:{
-  &quot;id&quot;:&quot;6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43&quot;
+      &quot;id&quot;:&quot;6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43&quot;
    }
 }
-</tt> </p></li>
-</ol>
 
-<div class="source">
-<div class="source"><pre class="prettyprint">// This returns all objects where the verdict is PASSED
+// This returns all objects where the verdict is PASSED
 // and the test case id is either TC5 or TC6. 
 {
    &quot;criteria&quot;:{
