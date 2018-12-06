@@ -187,7 +187,7 @@ key "id", artifactId will be extracted from the event GAV and temp will be set
 to true.
 </p>
 
-<summary>EiffelArtifactCreatedEvent example, click to unfold</summary>
+EiffelArtifactCreatedEvent example, click to unfold
 
     {
         "meta":{
@@ -325,8 +325,7 @@ use that. The full expression would then be
 </p>
 
 
-<details>
-<summary>EiffelConfidenceLevelModifiedEvent for example, click to unfold</summary>
+EiffelConfidenceLevelModifiedEvent for example, click to unfold
 <pre>
 {
    "links":[
@@ -364,10 +363,8 @@ use that. The full expression would then be
    }
 }
 </pre>
-</details>
 
-<details>
-<summary>Aggregated object before receiving EiffelConfidenceLevelModifiedEvent click to unfold</summary>
+Aggregated object before receiving EiffelConfidenceLevelModifiedEvent click to unfold
 <pre>
 {
    "_id":"6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43",
@@ -399,10 +396,8 @@ use that. The full expression would then be
    }
 }
 </pre>
-</details>
 
-<details>
-<summary>Aggregated object after receiving EiffelConfidenceLevelModifiedEvent click to unfold</summary>
+Aggregated object after receiving EiffelConfidenceLevelModifiedEvent click to unfold
 <pre>
 {
    "_id":"6acc3c87-75e0-4b6d-88f5-b1a5d4e62b43",
@@ -442,7 +437,6 @@ use that. The full expression would then be
    }
 }
 </pre>
-</details>
 
 
 <h4>Updating an array in JSON objects where the a field is pointing to Eiffel message id</h4>
@@ -457,8 +451,8 @@ aggregated object will change the value from <code>"ongoing":"false"</code>
 to <code>"ongoing":"true"</code>.
 </p>
 
-<details>
-<summary>Rules for EiffelTestCaseStartedEvent</summary>
+
+Rules for EiffelTestCaseStartedEvent
 <pre>
 {
    "TemplateName":"TEST_EXECUTION_1",
@@ -479,11 +473,8 @@ to <code>"ongoing":"true"</code>.
    "ProcessFunction":null
 }
 </pre>
-</details>
 
-<details>
-<summary>Aggregated object before receiving EiffelTestCaseStartedEvent, 
-click to unfold</summary>
+Aggregated object before receiving EiffelTestCaseStartedEvent, click to unfold
 <pre>
 {
    "_id":"b46ef12d-25gb-4d7y-b9fd-8763re66de47",
@@ -509,10 +500,8 @@ click to unfold</summary>
    }
 }
 </pre>
-</details>
 
-<details>
-<summary>EiffelTestCaseStartedEvent, click to unfold</summary>
+EiffelTestCaseStartedEvent, click to unfold
 <pre>
 {
    "meta":{
@@ -542,11 +531,8 @@ click to unfold</summary>
    ]
 }
 </pre>
-</details>
 
-<details>
-<summary>Aggregated object after receiving EiffelTestCaseStartedEvent, 
-click to unfold</summary>
+Aggregated object after receiving EiffelTestCaseStartedEvent, click to unfold
 <pre>
 {
    "_id":"b46ef12d-25gb-4d7y-b9fd-8763re66de47",
@@ -572,7 +558,6 @@ click to unfold</summary>
    }
 }
 </pre>
-</details>
 
 
 <h4>Upstream events</h4>
