@@ -8,6 +8,9 @@
             </topBarIcon>
             <navBarStyle>navbar-inverse</navBarStyle> <!-- black design on top navbar-->
             <sideBarEnabled>true</sideBarEnabled>
+            <!-- To enable wider side bar, sum of span must be 12 -->
+            <leftColumnClass>span3</leftColumnClass>
+            <bodyColumnClass>span9</bodyColumnClass>
             <breadcrumbDivider>-</breadcrumbDivider>
         </fluidoSkin>
     </custom>

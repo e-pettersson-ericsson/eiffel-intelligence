@@ -10,8 +10,13 @@ rules defined [here](https://github.com/eiffel-community/eiffel-intelligence/blo
 
 The types of the events to be aggregated will be:
 * EiffelArtifactCreatedEvent
+
 * EiffelTestCaseTriggeredEvent (2 events of this type)
+
 * EiffelTestCaseStartedEvent (2 events of this type)
+
 * EiffelTestCaseFinishedEvent (2 events of this type)
+
 * EiffelArtifactPublishedEvent (2 events of this type)
+
 * EiffelConfidenceLevelModifiedEvent (2 events of this type)

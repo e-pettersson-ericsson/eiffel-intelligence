@@ -1,6 +1,5 @@
 # EiffelTestCaseFinishedEvent Aggregation
 
-Eiffel Test Case Finished Event  
 
 Suppose that and artifact has been build, published and uploaded and all tests 
 in a test case has finished and as a result an EiffelTestCaseFinished event is 
