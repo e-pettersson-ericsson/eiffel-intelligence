@@ -17,6 +17,7 @@
 
 <img src="./images/eiffel-intelligence-logo.png" alt="Eiffel Intelligence" width="350"/>
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a5dcd72dc94c4fe9a326f35cdbe807eb)](https://app.codacy.com/app/e-pettersson-ericsson/emelie-eiffel-intelligence?utm_source=github.com&utm_medium=referral&utm_content=e-pettersson-ericsson/eiffel-intelligence&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/eiffel-community/eiffel-intelligence.svg?branch=master)](https://travis-ci.org/eiffel-community/eiffel-intelligence)
 [![Coverage Status](https://coveralls.io/repos/github/eiffel-community/eiffel-intelligence/badge.svg?branch=master)](https://coveralls.io/github/eiffel-community/eiffel-intelligence?branch=master)
 [![](https://jitpack.io/v/eiffel-community/eiffel-intelligence.svg)](https://jitpack.io/#eiffel-community/eiffel-intelligence)
