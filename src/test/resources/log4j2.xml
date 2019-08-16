@@ -10,4 +10,8 @@
             <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
+
+    <!-- Reducing logs from mock requests during tests -->
+    <logger name="org.mockserver.mock" level="error" />
+
 </Configuration>
