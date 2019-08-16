@@ -21,8 +21,8 @@ before_install:
 
 # Only running deploy stage (after merge) to master branch
 stages:
-  - test
   - report_coverage
+  - test
   - name: deploy
     if: branch = master AND type != pull_request
 
