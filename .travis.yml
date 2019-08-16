@@ -19,11 +19,10 @@ before_install:
   - uname -a
   - chmod +x pom.xml
 
-# Only running report_coverage and deploy stage (after merge) to master branch
+# Only running deploy stage (after merge) to master branch
 stages:
   - test
-  - name: report_coverage
-    if: branch = master AND type != pull_request
+  - report_coverage
   - name: deploy
     if: branch = master AND type != pull_request
 
